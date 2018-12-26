@@ -1,4 +1,4 @@
-package com.isen;
+package com.isen.dao;
 
 import com.isen.config.AppConfig;
 import com.isen.config.DataSourceConfig;
