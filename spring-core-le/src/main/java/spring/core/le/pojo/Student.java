@@ -1,4 +1,4 @@
-package com.isen.pojo;
+package spring.core.le.pojo;
 
 import java.util.Date;
 

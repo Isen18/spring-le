@@ -1,9 +1,5 @@
-package com.isen.dao;
+package spring.core.le.dao;
 
-import com.isen.config.AppConfig;
-import com.isen.config.DataSourceConfig;
-import com.isen.dao.inter.StudentRepository;
-import com.isen.pojo.Student;
 import java.util.Date;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import spring.core.le.config.AppConfig;
+import spring.core.le.config.DataSourceConfig;
+import spring.core.le.dao.inter.StudentRepository;
+import spring.core.le.pojo.Student;
+
 
 /**
  * @author Isen

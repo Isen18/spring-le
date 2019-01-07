@@ -1,4 +1,4 @@
-package com.isen.aspect;
+package spring.core.le.aspect;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

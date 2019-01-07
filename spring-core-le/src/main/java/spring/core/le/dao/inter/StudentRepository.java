@@ -1,6 +1,6 @@
-package com.isen.dao.inter;
+package spring.core.le.dao.inter;
 
-import com.isen.pojo.Student;
+import spring.core.le.pojo.Student;
 
 /**
  * @author Isen

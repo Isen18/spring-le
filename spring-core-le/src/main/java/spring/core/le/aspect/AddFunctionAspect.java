@@ -1,4 +1,4 @@
-package com.isen.aspect;
+package spring.core.le.aspect;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.DeclareParents;
@@ -10,6 +10,6 @@ import org.aspectj.lang.annotation.DeclareParents;
  */
 @Aspect
 public class AddFunctionAspect {
-    @DeclareParents(value = "com.isen.aspect.Person+", defaultImpl = ChineseFood.class)
+    @DeclareParents(value = "spring.core.le.aspect.Person+", defaultImpl = ChineseFood.class)
     public static Food food;
 }

@@ -1,11 +1,11 @@
-package com.isen.config;
+package spring.core.le.config;
 
-import com.isen.dao.impl.JdbcStudentRepository;
-import com.isen.dao.inter.StudentRepository;
 import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+import spring.core.le.dao.impl.JdbcStudentRepository;
+import spring.core.le.dao.inter.StudentRepository;
 
 /**
  * @author Isen

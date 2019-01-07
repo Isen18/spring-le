@@ -1,4 +1,4 @@
-package com.isen.config;
+package spring.core.le.config;
 
 import javax.sql.DataSource;
 import org.apache.commons.dbcp2.BasicDataSource;

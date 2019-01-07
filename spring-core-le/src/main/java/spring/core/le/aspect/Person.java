@@ -1,4 +1,4 @@
-package com.isen.aspect;
+package spring.core.le.aspect;
 
 /**
  * @author Isen

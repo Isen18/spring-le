@@ -1,11 +1,11 @@
-package com.isen.dao.impl;
+package spring.core.le.dao.impl;
 
-import com.isen.dao.inter.StudentRepository;
-import com.isen.pojo.Student;
 import java.sql.ResultSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
+import spring.core.le.dao.inter.StudentRepository;
+import spring.core.le.pojo.Student;
 
 /**
  * @author Isen

@@ -1,4 +1,5 @@
-package com.isen.aspect;
+package spring.core.le.aspect;
+
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
