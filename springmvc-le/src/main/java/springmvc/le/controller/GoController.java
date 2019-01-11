@@ -2,6 +2,8 @@ package springmvc.le.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.context.EnvironmentAware;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @since 1.0
  */
 @Controller
-public class GoController {
+public class GoController implements EnvironmentAware {
     private final Log logger = LogFactory.getLog(GoController.class);
 
     /**
@@ -29,5 +31,12 @@ public class GoController {
         logger.info("========index=========");
         model.addAttribute("msg", "Go!");
         return "go.jsp";
+    }
+
+    private Environment enviroment = null;
+
+    @Override
+    public void setEnvironment(Environment environment) {
+        this.enviroment = environment;
     }
 }
