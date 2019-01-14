@@ -17,7 +17,7 @@
 	<context:component-scan base-package="springmvc.le" />
 
 	<!--注解驱动-->
-	<mvc:annotation-driven />
+	<mvc:annotation-driven conversion-service="conversionService" ></mvc:annotation-driven>
 
 	<!--只扫描@MyController-->
 	<!--<context:component-scan base-package="springmvc.le" use-default-filters="false">-->
@@ -55,17 +55,31 @@
 		<!--&lt;!&ndash; 配置jsp路径的后缀 &ndash;&gt;-->
 		<!--<property name="suffix" value=".jsp"/>-->
 	<!--</bean>-->
-	
+
+
+    <!--将自定义的converter/formatter注入到requestMappingHandlerAdapter-->
+    <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">  -->
+        <!--<property name="webBindingInitializer" ref="webBindingInitializer"/>  -->
+    <!--</bean>  -->
+    <!--<bean id="webBindingInitializer" class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">  -->
+        <!--<property name="conversionService" ref="conversionService"/>  -->
+    <!--</bean>   -->
+    <!--上述等价于<mvc:annotation-driven conversion-service="conversionService" />-->
 	<!-- 自定义参数绑定 -->
-	<!--<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">-->
-		<!--&lt;!&ndash; 转换器 &ndash;&gt;-->
-		<!--<property name="converters">-->
-			<!--<list>-->
-				<!--&lt;!&ndash; 日期类型转换 &ndash;&gt;-->
-				<!--<bean class="cn.itcast.ssm.controller.converter.CustomDateConverter"/>-->
-			<!--</list>-->
-		<!--</property>-->
-	<!--</bean>-->
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<!-- 转换器 -->
+		<property name="converters">
+			<set>
+				<bean class="springmvc.le.converter.CustomDateConverter"/>
+			</set>
+		</property>
+        <!--格式化-->
+        <property name="formatters">
+            <set>
+                <bean class="springmvc.le.converter.PhoneNumberFormatter"/>
+            </set>
+        </property>
+	</bean>
 	
 	<!-- 校验器 -->
 	<!--<bean id="validator"-->
@@ -122,7 +136,5 @@
 			<!--<bean class="cn.itcast.ssm.interceptor.HandlerInterceptor2"></bean>-->
 		<!--</mvc:interceptor>-->
 	<!--</mvc:interceptors>-->
-	
-	
 	
 </beans>
