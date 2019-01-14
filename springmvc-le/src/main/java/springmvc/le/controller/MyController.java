@@ -3,9 +3,12 @@ package springmvc.le.controller;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import springmvc.le.pojo.User;
 
 /**
  * @author Isen
@@ -73,5 +76,45 @@ public class MyController {
         System.out.println("request.name2=" + request.getParameter("name2"));
         return OK;
     }
+
+    /**
+     * curl http://localhost:8080/myController/test3?birthday=2018-01-01&age=18
+     */
+    @RequestMapping("/test3")
+    @ResponseBody
+    public String test3(User user){
+        System.out.println("user=" + user);
+        return OK;
+    }
+
+    /**
+     * curl http://localhost:8080/myController/test4?phoneNumber=100-1234567
+     */
+    @RequestMapping("/test4")
+    @ResponseBody
+    public String test4(User user){
+        System.out.println("user=" + user);
+        return OK;
+    }
+
+    /**
+     * curl http://localhost:8080/myController/test222
+     */
+    @RequestMapping(value = "/test222")
+    @ResponseBody
+    public User test5(@RequestBody User user){
+        System.out.println(user);
+        return user;
+    }
+
+//    /**
+//     * curl http://localhost:8080/myController/test55
+//     */
+//    @RequestMapping(value = "/test55")
+//    @ResponseBody
+//    public String test55(@RequestBody User user, ){
+//        System.out.println(user);
+//        return "ok";
+//    }
 
 }
