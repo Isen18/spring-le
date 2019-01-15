@@ -16,7 +16,7 @@ public class User implements Serializable {
     private String name;
     private int age;
     private Date birthday;
-    private PhoneNumber phoneNumber;
+    private Tell tell;
 
     public String getName() {
         return name;
@@ -42,12 +42,12 @@ public class User implements Serializable {
         this.birthday = birthday;
     }
 
-    public PhoneNumber getPhoneNumber() {
-        return phoneNumber;
+    public Tell getTell() {
+        return tell;
     }
 
-    public void setPhoneNumber(PhoneNumber phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setTell(Tell tell) {
+        this.tell = tell;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class User implements Serializable {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", birthday=" + birthday +
-                ", phoneNumber=" + phoneNumber +
+                ", tell=" + tell +
                 '}';
     }
 

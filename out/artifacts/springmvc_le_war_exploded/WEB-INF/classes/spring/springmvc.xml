@@ -66,20 +66,21 @@
     <!--</bean>   -->
     <!--上述等价于<mvc:annotation-driven conversion-service="conversionService" />-->
 	<!-- 自定义参数绑定 -->
-	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-		<!-- 转换器 -->
-		<property name="converters">
-			<set>
-				<bean class="springmvc.le.converter.CustomDateConverter"/>
-			</set>
-		</property>
-        <!--格式化-->
-        <property name="formatters">
-            <set>
-                <bean class="springmvc.le.converter.PhoneNumberFormatter"/>
-            </set>
-        </property>
-	</bean>
+        <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+            <!-- 转换器 -->
+            <property name="converters">
+                <set>
+                    <bean class="springmvc.le.converter.CustomDateConverter"/>
+                </set>
+            </property>
+            <!--格式化-->
+            <property name="formatters">
+                <set>
+                    <bean class="springmvc.le.converter.PhoneNumberFormatter"/>
+                    <bean class="springmvc.le.converter.PhoneNumberFormatAnnotationFormatterFactory"/>
+                </set>
+            </property>
+        </bean>
 	
 	<!-- 校验器 -->
 	<!--<bean id="validator"-->

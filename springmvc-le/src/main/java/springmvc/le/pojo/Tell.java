@@ -5,7 +5,7 @@ package springmvc.le.pojo;
  * @date 2019/1/7 14:56
  * @since 1.0
  */
-public class PhoneNumber {
+public class Tell {
 
     private String areaCode;
 
@@ -29,7 +29,7 @@ public class PhoneNumber {
 
     @Override
     public String toString() {
-        return "PhoneNumber{" +
+        return "Tell{" +
                 "areaCode='" + areaCode + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';

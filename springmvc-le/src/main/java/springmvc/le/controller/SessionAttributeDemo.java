@@ -24,7 +24,7 @@ public class SessionAttributeDemo {
      */
     @RequestMapping("/index")
     public String index(Model model){
-        //一下model参数也会在url上
+        //以下model参数也会在url上,即默认情况下，model中参数会在redirect的url中暴露出来，即添加在url后面
         model.addAttribute("book", "空境");
         model.addAttribute("description", "空之境界");
         model.addAttribute("price", 18.);
