@@ -1,7 +1,9 @@
 package spring.sercurity.le.auth;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.util.CollectionUtils;
@@ -52,9 +54,7 @@ public class PermissionEvaluator {
                     return false;
                 }
 
-                if(urlPermissionPatternSet.contains(urlPermissionPattern)){if(userPermission == null){
-            return false;
-        }
+                if(urlPermissionPatternSet.contains(urlPermissionPattern)){
                     return true;
                 }
             }
@@ -79,13 +79,14 @@ public class PermissionEvaluator {
             return false;
         }
 
-        String permissionMark = authorize.value().getPermissionMark();
+        Set<String> permissionMarkSet = Arrays.stream(authorize.value()).map(MethodPermissionEn::getPermissionMark).collect(Collectors.toSet());
         Set<String> methodPermissionSet = userPermission.getMethodPermissionSet();
         if(CollectionUtils.isEmpty(methodPermissionSet)){
             return false;
         }
 
-        if(methodPermissionSet.contains(permissionMark)){
+        if(methodPermissionSet.containsAll(permissionMarkSet)){
+            // XXX isen 19-6-25 记录缺少什么权限
             return true;
         }
 

@@ -13,5 +13,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface Authorize {
-    MethodPermissionEn value();
+    // XXX isen 19-6-25 参考spring-security preAuthorize
+    MethodPermissionEn[] value();
 }
